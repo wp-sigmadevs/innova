@@ -1,0 +1,183 @@
+(function($) {
+	'use strict';
+
+	var INNOVA = INNOVA || {};
+
+	/**
+	 * Predefined variables.
+	 */
+	var $window = $(window),
+		$document = $(document),
+		$body = $('body'),
+		$mainMenu = $('.sf-menu'),
+		$handheldMenu = $('.innova-menu'),
+		$intelHeader = $('.intelligent-header'),
+		$headerSpace = $('.fixed-header-space');
+
+	/**
+	 * Check if element exists.
+	 */
+	$.fn.elExists = function() {
+		return this.length > 0;
+	};
+
+	/**
+	 * Scripts to run on document ready event.
+	 */
+	INNOVA.onReady = {
+		init: function() {
+			var self = this;
+
+			$document.on('ready', function() {
+				self.mainNavInit();
+				self.mainNavSubAction();
+				self.handheldNavInit();
+				self.handheldNavSubAction();
+				self.intelligentMenuInit();
+				self.menuClasses();
+				INNOVA.onResize.headerActions();
+			});
+		},
+
+		mainNavInit: function() {
+			$mainMenu.superfish({
+				delay: 0,
+				animation: { opacity: 'show' },
+				animationOut: { opacity: 'hide' },
+				speed: 'fast',
+				autoArrows: false,
+				disableHI: true
+			});
+		},
+
+		mainNavSubAction: function() {
+			$document.on('mouseenter', '.sf-menu .sub-menu', function() {
+				var menu = $(this);
+				var child = $(this).find('ul');
+				if ($(menu).offset().left + $(menu).width() + $(child).width() > $(window).width()) {
+					$(child).css({ left: 'inherit', right: '100%' });
+				}
+			});
+		},
+
+		handheldNavInit: function() {
+			var cButton = document.querySelector('.innova-menu__close');
+			if (cButton) {
+				var slideLeft = new Menu();
+			}
+
+			var slideLeftBtn = document.querySelector('#innova-trigger-button');
+			if (slideLeftBtn) {
+				slideLeftBtn.addEventListener('click', function(e) {
+					e.preventDefault;
+					slideLeft.open();
+				});
+			}
+		},
+
+		handheldNavSubAction: function() {
+			// adds toggle button to li items that have children
+			$handheldMenu.find('li a').each(function() {
+				if ($(this).next().length > 0) {
+					$(this)
+						.parent('li')
+						.addClass('has-child')
+						.append('<a class="drawer-toggle" href="#"><i class="fa fa-angle-down"></i></a>');
+				}
+			});
+
+			// expands the dropdown menu on each click
+			$handheldMenu.find('li .drawer-toggle').on('click', function(e) {
+				e.preventDefault();
+				$(this).parent('li').children('ul').stop(true, true).slideToggle(250);
+				$(this).parent('li').toggleClass('open');
+			});
+		},
+
+		intelligentMenuInit: function() {
+			if (!$intelHeader.elExists()) {
+				return false;
+			}
+
+			var navContainer = document.querySelector('.intelligent-header');
+			var options = {
+				classes: {
+					initial: 'iheader',
+					pinned: 'iheader--pinned',
+					unpinned: 'iheader--unpinned',
+					top: 'iheader--top',
+					notTop: 'iheader--not-top',
+					bottom: 'iheader--bottom',
+					notBottom: 'iheader--not-bottom'
+				}
+			};
+
+			var headroom = new Headroom(navContainer, options);
+
+			headroom.init();
+		},
+
+		menuClasses: function() {
+			if (!$intelHeader.elExists()) {
+				return false;
+			}
+
+			$window.on('scroll', function() {
+				var height = $window.scrollTop();
+
+				if (height < 100) {
+					$intelHeader.removeClass('scrolling');
+				} else {
+					$intelHeader.addClass('scrolling');
+				}
+			});
+		}
+	};
+
+	/**
+	 * Scripts to run on window load event.
+	 */
+	INNOVA.onLoad = {
+		init: function() {
+			var self = this;
+
+			$window.on('load', function() {
+				self.bodyClass();
+			});
+		},
+
+		bodyClass: function() {
+			$body.addClass('document-loaded');
+		}
+	};
+
+	/**
+	 * Scripts to run on window load & resize event.
+	 */
+	INNOVA.onResize = {
+		init: function() {
+			var self = this;
+
+			$window.on('resize', function() {
+				self.headerActions();
+			});
+		},
+
+		headerActions: function() {
+			var intHeight = $intelHeader.outerHeight();
+			$headerSpace.height(intHeight);
+		}
+	};
+
+	/**
+	 * App Init.
+	 */
+	INNOVA.init = function() {
+		INNOVA.onReady.init(), INNOVA.onLoad.init(), INNOVA.onResize.init();
+	};
+
+	/**
+	 * Run app.
+	 */
+	INNOVA.init();
+})(jQuery);

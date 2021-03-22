@@ -1,0 +1,83 @@
+#customize-controls .customize-control {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 15px;
+}
+
+#customize-controls div.customize-section-description {
+	font-size: 14px;
+	font-weight: 500;
+	border-bottom: 1px solid #333;
+	border-top: 1px solid #333;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+#customize-controls .customize-control.customize-control-kirki-color {
+	padding-bottom: 12px;
+	margin-bottom: 12px;
+}
+
+#customize-controls .accordion-section-content .customize-control:last-child {
+	border-bottom: 0;
+	padding-bottom: 0;
+}
+
+#customize-controls .attachment-media-view.attachment-media-view-image {
+	margin-bottom: 12px;
+}
+
+#customize-controls .customize-control-kirki-radio-image img {
+	margin-right: 10px;
+	border: 1px solid #ccc;
+}
+
+#customize-controls .select2-container--default .select2-selection--multiple,
+#customize-controls .select2-container--default .select2-selection--single {
+	min-height: 30px;
+	border-radius: 4px;
+	border: 1px solid #7e8993;
+}
+
+#customize-controls .wp-picker-container input[type=text].wp-color-picker {
+	width: 65px;
+	height: auto;
+}
+
+#customize-controls .customize-control-kirki-typography .wrapper {
+	margin-top: 15px;
+}
+
+#customize-controls .kirki-host-font-locally {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#customize-controls #sub-accordion-section-custom_css div.customize-section-description {
+	font-size: 13px;
+	font-weight: 400;
+	border-bottom: 0;
+}
+
+#customize-controls .control-section .accordion-section-title::before {
+	vertical-align: bottom;
+	margin-right: 10px;
+}
+
+#customize-controls .date-time-fields .date-input.day,
+#customize-controls .date-time-fields .date-input.hour,
+#customize-controls .date-time-fields .date-input.minute {
+	width: 46px;
+}
+
+#customize-controls .date-time-fields .date-input.year {
+	width: 60px;
+}
+
+#customize-controls .customize-control.customize-control-kirki-editor iframe {
+	height: 220px !important;
+}
+
+#customize-controls .customize-control.customize-control-kirki-editor .wp-media-buttons {
+	display: none;
+}
