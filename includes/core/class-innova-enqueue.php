@@ -21,6 +21,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Innova_Enqueue {
 
 	/**
+	 * Base Class.
+	 *
+	 * @access private
+	 * @var object
+	 * @since 1.0.0
+	 */
+	private $base;
+
+	/**
 	 * Accumulates scripts.
 	 *
 	 * @access protected
@@ -44,6 +53,8 @@ class Innova_Enqueue {
 			return;
 		}
 
+		$this->base = Innova_Base::get_instance();
+
 		$wp_register_function = '';
 
 		foreach ( $this->enqueues as $type => $enqueue ) {
@@ -51,10 +62,10 @@ class Innova_Enqueue {
 
 			foreach ( $enqueue as $key ) {
 				$wp_register_function(
-					$key['handle'],
-					$key['asset_uri'],
-					! empty( $key['dependency'] ) ? $key['dependency'] : array(),
-					! empty( $key['version'] ) ? $key['version'] : $this->plugin_version,
+					isset( $key['handle'] ) ? $key['handle'] : '',
+					isset( $key['asset_uri'] ) ? $key['asset_uri'] : '',
+					isset( $key['dependency'] ) ? $key['dependency'] : array(),
+					isset( $key['version'] ) ? $key['version'] : null,
 					( 'style' === $type ) ? 'all' : true
 				);
 			}

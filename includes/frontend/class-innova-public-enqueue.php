@@ -124,7 +124,7 @@ class Innova_Public_Enqueue extends Innova_Enqueue {
 		$styles[] = array(
 			'handle'    => 'innova-google-fonts',
 			'asset_uri' => esc_url( apply_filters( 'innova_default_google_fonts', 'https://fonts.googleapis.com/css2?family=Poppins&family=Source+Sans+Pro:wght@600&display=swap' ) ),
-			'version'   => false,
+			'version'   => null,
 		);
 
 		// FontAwesome 5 CSS.
@@ -152,7 +152,7 @@ class Innova_Public_Enqueue extends Innova_Enqueue {
 		$styles[] = array(
 			'handle'    => 'innova-stylesheet',
 			'asset_uri' => get_stylesheet_uri(),
-			'version'   => $this->base->get_theme_version(),
+			'version' => $this->base->get_theme_version(),
 		);
 
 		$this->enqueues['style'] = apply_filters( 'innova_frontend_styles', $styles, 10, 1 );
@@ -235,7 +235,7 @@ class Innova_Public_Enqueue extends Innova_Enqueue {
 			'handle'     => 'innova-frontend-script',
 			'asset_uri'  => $this->base->get_js_uri() . 'frontend.js',
 			'dependency' => array( 'jquery' ),
-			'version'    => $this->base->get_theme_version(),
+			'version' => $this->base->get_theme_version(),
 		);
 
 		$this->enqueues['script'] = apply_filters( 'innova_frontend_scripts', $scripts, 10, 1 );
