@@ -21,15 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Innova_Enqueue {
 
 	/**
-	 * Base Class.
-	 *
-	 * @access private
-	 * @var object
-	 * @since 1.0.0
-	 */
-	private $base;
-
-	/**
 	 * Accumulates scripts.
 	 *
 	 * @access protected
@@ -52,8 +43,6 @@ class Innova_Enqueue {
 		if ( empty( $this->enqueues ) ) {
 			return;
 		}
-
-		$this->base = Innova_Base::get_instance();
 
 		$wp_register_function = '';
 

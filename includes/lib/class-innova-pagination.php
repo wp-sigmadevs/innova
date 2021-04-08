@@ -181,11 +181,11 @@ class Innova_Pagination {
 	public function single_post_nav( string $prev = '', string $next = '', bool $title = true, string $type = 'single_post' ) {
 
 		// If title is needed.
-		$title = ( $title ) ? '<p>%title</p>' : '';
+		$title = ( $title ) ? '%title' : '';
 
 		// Previous & Next text.
-		$this->prev_text = sprintf( '<span>%s</span>%2$s', $prev, $title );
-		$this->next_text = sprintf( '<span>%s</span>%2$s', $next, $title );
+		$this->prev_text = sprintf( '%s %2$s', $prev, $title );
+		$this->next_text = sprintf( '%2$s %s', $next, $title );
 
 		// Previous & Next link.
 		$this->prev_link = get_previous_post_link( '%link', $this->prev_text );
@@ -214,7 +214,7 @@ class Innova_Pagination {
 		$this->render_nav .= $this->screen_reader_text();
 
 		// Posts nav.
-		$this->render_nav .= '<div class="nav-links pagination">';
+		$this->render_nav .= '<div class="nav-links pagination classic justify-content-between">';
 		if ( $this->prev_link ) {
 			$this->render_nav .= '<div class="nav-previous">' . $this->prev_link . '</div>';
 		}
@@ -264,7 +264,7 @@ class Innova_Pagination {
 		$this->render_nav .= $this->screen_reader_text();
 
 		// Numbered Posts nav.
-		$this->render_nav .= '<ul class="pagination">';
+		$this->render_nav .= '<ul class="pagination numbered mb-0 justify-content-center">';
 		foreach ( $pagination as $key => $page_link ) {
 			$this->render_nav     .= '<li class="page-item paginated_link' . esc_attr( ( false !== strpos( $page_link, 'current' ) ) ? ' active' : '' ) . '">';
 				$this->render_nav .= $page_link;

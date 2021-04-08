@@ -14,11 +14,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 $breadcrumbs = Innova_Breadcrumbs::get_instance();
 ?>
 
-<div id="page-title" class="page-title">
+<div id="page-title" class="page-title image-in-bg size-cover">
 	<div class="container">
-		<div class="row">
-			<div class="col-12 col-sm-12 col-md-12">
+		<div class="row align-items-center">
+			<div class="col-12 col-sm-12 col-md-6 col-lg-7">
 				<h1><?php innova_the_page_title(); ?></h1>
+			</div>
+			<div class="col-12 col-sm-12 col-md-6 col-lg-5">
 				<?php
 				if ( get_theme_mod( 'innova_enable_breadcrumbs', false ) ) {
 					// Breadcrumbs.

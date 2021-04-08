@@ -72,7 +72,7 @@ class Innova_Jetpack {
 		add_theme_support(
 			'infinite-scroll',
 			array(
-				'container'      => 'primary',
+				'container'      => 'posts-container',
 				'render'         => array( $this, 'infinite_scroll_render' ),
 				'posts_per_page' => get_option( 'posts_per_page' ),
 				'wrapper'        => false,

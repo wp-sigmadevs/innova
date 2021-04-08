@@ -107,13 +107,13 @@ class Innova_Customizer_Controls {
 		$this->controls[] = array(
 			'settings'    => 'innova_logo_padding',
 			'label'       => esc_html__( 'Logo Padding', 'innova' ),
-			'description' => esc_html__( 'Logo top/bottom padding. Default: 10px.', 'innova' ),
+			'description' => esc_html__( 'Logo top/bottom padding. Default: 0.1rem.', 'innova' ),
 			'section'     => 'innova_header_styles',
 			'type'        => 'dimensions',
 			'priority'    => 20,
 			'default'     => array(
-				'padding-top'    => '10px',
-				'padding-bottom' => '10px',
+				'padding-top'    => '0.1rem',
+				'padding-bottom' => '0.1rem',
 			),
 			'choices'     => array(
 				'labels' => array(
@@ -201,13 +201,13 @@ class Innova_Customizer_Controls {
 		$this->controls[] = array(
 			'settings'    => 'innova_footer_padding',
 			'label'       => esc_html__( 'Footer Padding', 'innova' ),
-			'description' => esc_html__( 'Footer top/bottom padding. Default: 70px.', 'innova' ),
+			'description' => esc_html__( 'Footer top/bottom padding. Default: 7rem.', 'innova' ),
 			'section'     => 'innova_footer_styles',
 			'type'        => 'dimensions',
 			'priority'    => 15,
 			'default'     => array(
-				'padding-top'    => '70px',
-				'padding-bottom' => '70px',
+				'padding-top'    => '7rem',
+				'padding-bottom' => '7rem',
 			),
 			'choices'     => array(
 				'labels' => array(
@@ -283,7 +283,7 @@ class Innova_Customizer_Controls {
 				'font-size'      => '1.6rem',
 				'line-height'    => '1.5',
 				'letter-spacing' => '0',
-				'text-transform' => 'none',
+				'text-transform' => 'uppercase',
 			),
 			'priority'  => 15,
 			'transport' => 'auto',
@@ -432,7 +432,7 @@ class Innova_Customizer_Controls {
 			'section'  => 'innova_color_settings',
 			'type'     => 'color',
 			'priority' => 10,
-			'default'  => '#333333',
+			'default'  => '#242545',
 			// 'transport' => 'postMessage',
 		);
 
@@ -442,7 +442,7 @@ class Innova_Customizer_Controls {
 			'section'  => 'innova_color_settings',
 			'type'     => 'color',
 			'priority' => 15,
-			'default'  => '#1FD682',
+			'default'  => '#738ff4',
 			// 'transport' => 'postMessage',
 		);
 
@@ -452,7 +452,7 @@ class Innova_Customizer_Controls {
 			'section'  => 'innova_color_settings',
 			'type'     => 'color',
 			'priority' => 20,
-			'default'  => '#20D6F3',
+			'default'  => '#fc346c',
 			// 'transport' => 'postMessage',
 		);
 
@@ -462,7 +462,7 @@ class Innova_Customizer_Controls {
 			'section'  => 'innova_color_settings',
 			'type'     => 'color',
 			'priority' => 25,
-			'default'  => '#0B285B',
+			'default'  => '#fccc6c',
 			// 'transport' => 'postMessage',
 		);
 
@@ -506,10 +506,9 @@ class Innova_Customizer_Controls {
 			'section'     => 'innova_pagetitle',
 			'priority'    => 10,
 			'default'     => array(
-				'background-color'      => 'rgba(20,20,20,.8)',
 				'background-image'      => '',
-				'background-repeat'     => 'repeat',
-				'background-position'   => 'center center',
+				'background-repeat'     => 'no-repeat',
+				'background-position'   => 'left top',
 				'background-size'       => 'cover',
 				'background-attachment' => 'scroll',
 			),
@@ -524,13 +523,13 @@ class Innova_Customizer_Controls {
 		$this->controls[] = array(
 			'settings'    => 'innova_pagetitle_padding',
 			'label'       => esc_html__( 'Page Title Banner Padding', 'innova' ),
-			'description' => esc_html__( 'Page title banner top/bottom padding. Default: 80px.', 'innova' ),
+			'description' => esc_html__( 'Page title banner top/bottom padding. Default: 8rem.', 'innova' ),
 			'section'     => 'innova_pagetitle',
 			'type'        => 'dimensions',
 			'priority'    => 15,
 			'default'     => array(
-				'padding-top'    => '80px',
-				'padding-bottom' => '80px',
+				'padding-top'    => '8rem',
+				'padding-bottom' => '8rem',
 			),
 			'choices'     => array(
 				'labels' => array(
@@ -603,13 +602,13 @@ class Innova_Customizer_Controls {
 		$this->controls[] = array(
 			'settings'    => 'innova_page_padding',
 			'label'       => esc_html__( 'Page Padding', 'innova' ),
-			'description' => esc_html__( 'Page top/bottom padding. Default: 80px.', 'innova' ),
+			'description' => esc_html__( 'Page top/bottom padding. Default: 8rem.', 'innova' ),
 			'section'     => 'innova_page_styles',
 			'type'        => 'dimensions',
 			'priority'    => 10,
 			'default'     => array(
-				'padding-top'    => '80px',
-				'padding-bottom' => '80px',
+				'padding-top'    => '8rem',
+				'padding-bottom' => '8rem',
 			),
 			'choices'     => array(
 				'labels' => array(
@@ -698,7 +697,7 @@ class Innova_Customizer_Controls {
 				'fa_icon'     => array(
 					'type'        => 'text',
 					'label'       => esc_html__( 'Icon', 'innova' ),
-					'description' => esc_html__( 'Please enter Font Awesome 5 icon class', 'innova' ),
+					'description' => esc_html__( 'Please enter Font Awesome or other icon class', 'innova' ),
 				),
 				'profile_url' => array(
 					'type'        => 'link',

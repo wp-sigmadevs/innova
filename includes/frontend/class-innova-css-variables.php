@@ -111,10 +111,10 @@ class Innova_CSS_Variables {
 	 * @since 1.0.0
 	 */
 	private function colors() {
-		$this->variables['colors']['text']      = get_theme_mod( 'innova_text_color', '#333333' );
-		$this->variables['colors']['primary']   = get_theme_mod( 'innova_primary_color', '#1FD682' );
-		$this->variables['colors']['secondary'] = get_theme_mod( 'innova_secondary_color', '#20D6F3' );
-		$this->variables['colors']['tertiary']  = get_theme_mod( 'innova_tertiary_color', '#0B285B' );
+		$this->variables['colors']['text']      = get_theme_mod( 'innova_text_color', '#242545' );
+		$this->variables['colors']['primary']   = get_theme_mod( 'innova_primary_color', '#738ff4' );
+		$this->variables['colors']['secondary'] = get_theme_mod( 'innova_secondary_color', '#fc346c' );
+		$this->variables['colors']['tertiary']  = get_theme_mod( 'innova_tertiary_color', '#fccc6c' );
 		$this->variables['colors']['offset']    = get_theme_mod( 'innova_offset_color', '#EFF5FC' );
 		$this->variables['colors']['border']    = get_theme_mod( 'innova_border_color', '#DDDDDD' );
 

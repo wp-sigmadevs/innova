@@ -164,7 +164,11 @@
 		},
 
 		headerActions: function() {
-			var intHeight = $intelHeader.outerHeight();
+			if (!$intelHeader.elExists()) {
+				return false;
+			}
+
+			var intHeight = $intelHeader[0].getBoundingClientRect().height;
 			$headerSpace.height(intHeight);
 		}
 	};

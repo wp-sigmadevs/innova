@@ -271,7 +271,7 @@ if ( ! function_exists( 'innova_comments_meta' ) ) {
 		$comments = '';
 
 		if ( ! post_password_required() && ( comments_open() || 0 !== intval( get_comments_number() ) ) ) {
-			$comments_number = get_comments_number_text( esc_html__( '0', 'innova' ), esc_html__( '1', 'innova' ), esc_html__( '%', 'innova' ) );
+			$comments_number = get_comments_number_text( esc_html__( 'Click to Comment', 'innova' ), esc_html__( '1 Comment', 'innova' ), esc_html__( '% Comments', 'innova' ) );
 
 			$comments = sprintf(
 				'<span class="comments-link"><span class="screen-reader-text">%1$s</span><a href="%2$s">%3$s</a></span>',
@@ -321,7 +321,7 @@ if ( ! function_exists( 'innova_comment_form' ) ) {
 	 */
 	function innova_comment_form() {
 
-		// Getting parametes for Comment Form.
+		// Getting parameters for Comment Form.
 		$commenter = wp_get_current_commenter();
 		$req       = get_option( 'require_name_email' );
 		$aria_req  = ( $req ? " aria-required='true'" : '' );
@@ -413,7 +413,7 @@ if ( ! function_exists( 'innova_comment_callback' ) ) {
 		?>
 		<li <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?> id="comment-<?php comment_ID(); ?>">
 			<div class="comment-body">
-				<div class="comment-media">
+				<div class="comment-media d-flex">
 					<?php
 					if ( ! empty( get_avatar( $comment ) ) ) {
 						?>
@@ -439,19 +439,6 @@ if ( ! function_exists( 'innova_comment_callback' ) ) {
 							get_comment_author_link()
 						);
 						?>
-						<div class="comment-meta commentmetadata">
-							<a href="<?php echo esc_url( htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ); ?>">
-								<time datetime="<?php echo esc_attr( get_the_time( 'c' ) ); ?>" itemprop="datePublished">
-									<?php
-									/* translators: 1: comment date, 2: comment time */
-									printf( esc_html__( '%1$s at %2$s', 'innova' ), get_comment_date(), get_comment_time() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-									?>
-								</time>
-							</a>
-							<?php
-							edit_comment_link( esc_html__( '(Edit)', 'innova' ), '  ', '' );
-							?>
-						</div>
 
 						<div class="comment-text" itemprop="text">
 							<?php comment_text(); ?>
@@ -466,18 +453,32 @@ if ( ! function_exists( 'innova_comment_callback' ) ) {
 						}
 						?>
 
-						<div class="comment-reply">
+						<div class="comment-meta commentmetadata">
+							<a href="<?php echo esc_url( htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ); ?>">
+								<time datetime="<?php echo esc_attr( get_the_time( 'c' ) ); ?>" itemprop="datePublished">
+									<?php
+									/* translators: 1: comment date, 2: comment time */
+									printf( esc_html__( '%1$s at %2$s', 'innova' ), get_comment_date(), get_comment_time() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+									?>
+								</time>
+							</a>
 							<?php
-							comment_reply_link(
-								array_merge(
-									$args,
-									array(
-										'depth'     => $depth,
-										'max_depth' => $args['max_depth'],
-									)
-								)
-							);
+							edit_comment_link( esc_html__( '(Edit)', 'innova' ), '  ', '' );
 							?>
+
+							<div class="comment-reply">
+								<?php
+								comment_reply_link(
+									array_merge(
+										$args,
+										array(
+											'depth'     => $depth,
+											'max_depth' => $args['max_depth'],
+										)
+									)
+								);
+								?>
+							</div>
 						</div>
 					</div><!-- .comment-content -->
 				</div><!-- .comment-media -->

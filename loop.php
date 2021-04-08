@@ -35,10 +35,3 @@ while ( have_posts() ) {
 		get_template_part( 'views/content/content', get_post_format() );
 	}
 }
-
-// Posts Pagination.
-if ( 'classic' === get_theme_mod( 'innova_archive_pagination', 'classic' ) ) {
-	innova_classic_pagination();
-} else {
-	innova_numbered_pagination();
-}
