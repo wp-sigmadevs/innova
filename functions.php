@@ -21,7 +21,7 @@ if ( version_compare( $GLOBALS['wp_version'], '5.0', '<' ) ) {
 	require get_template_directory() . '/includes/compats/class-innova-back-compats.php';
 
 	$messages = Innova_Back_Compats::get_instance();
-	$messages->register();
+	$messages->actions();
 
 	return;
 }

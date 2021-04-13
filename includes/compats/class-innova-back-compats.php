@@ -50,7 +50,7 @@ class Innova_Back_Compats {
 	 *
 	 * @since 1.0.0
 	 */
-	public function register() {
+	public function actions() {
 		add_action( 'after_switch_theme', array( $this, 'switch_theme' ) );
 		add_action( 'admin_notices', array( $this, 'upgrade_notice' ) );
 		add_action( 'load-customize.php', array( $this, 'disable_customizer' ) );
