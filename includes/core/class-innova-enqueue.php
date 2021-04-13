@@ -50,12 +50,18 @@ class Innova_Enqueue {
 			$wp_register_function = 'wp_register_' . $type;
 
 			foreach ( $enqueue as $key ) {
+				if ( isset( $key['load_in_footer'] ) ) {
+					$load_in_footer = (bool) $key['load_in_footer'];
+				} else {
+					$load_in_footer = (bool) true;
+				}
+
 				$wp_register_function(
 					isset( $key['handle'] ) ? $key['handle'] : '',
 					isset( $key['asset_uri'] ) ? $key['asset_uri'] : '',
 					isset( $key['dependency'] ) ? $key['dependency'] : array(),
 					isset( $key['version'] ) ? $key['version'] : null,
-					( 'style' === $type ) ? 'all' : true
+					( 'style' === $type ) ? 'all' : $load_in_footer
 				);
 			}
 		}

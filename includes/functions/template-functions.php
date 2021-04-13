@@ -106,7 +106,7 @@ if ( ! function_exists( 'innova_scroll_to_top' ) ) {
 			return;
 		}
 
-		echo '<div class="innova-scroll-to-top"></div>';
+		echo '<div class="innova-scroll-to-top"><i class="fa fa-angle-up"></i><i class="fa fa-angle-double-up"></i></div>';
 	}
 }
 
@@ -174,7 +174,17 @@ if ( ! function_exists( 'innova_pageloader' ) ) {
 		if ( false === get_theme_mod( 'innova_enable_pageloader', true ) ) {
 			return;
 		}
-
-		echo '<div class="innova-pageloader"></div>';
+		?>
+		<div class="innova-pageloader">
+			<div class="pageloader-inner">
+				<div class="loader-ellipsis">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+		</div>
+		<?php
 	}
 }

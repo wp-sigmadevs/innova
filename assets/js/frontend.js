@@ -12,6 +12,8 @@
 		$mainMenu = $('.sf-menu'),
 		$handheldMenu = $('.innova-menu'),
 		$intelHeader = $('.intelligent-header'),
+		$preLoader = $('.innova-pageloader'),
+		$toTop = $('.innova-scroll-to-top'),
 		$headerSpace = $('.fixed-header-space');
 
 	/**
@@ -22,6 +24,15 @@
 	};
 
 	/**
+	 * Helpers.
+	 */
+	INNOVA.helpers = {
+		sampleFunction: function() {
+			console.log('I am a helper function');
+		}
+	};
+
+	/**
 	 * Scripts to run on document ready event.
 	 */
 	INNOVA.onReady = {
@@ -29,14 +40,20 @@
 			var self = this;
 
 			$document.on('ready', function() {
+				self.preLoaderInit();
 				self.mainNavInit();
 				self.mainNavSubAction();
 				self.handheldNavInit();
 				self.handheldNavSubAction();
 				self.intelligentMenuInit();
 				self.menuClasses();
+				self.scrollToTop();
 				INNOVA.onResize.headerActions();
 			});
+		},
+
+		preLoaderInit: function() {
+			$preLoader.delay(300).fadeOut('fast');
 		},
 
 		mainNavInit: function() {
@@ -131,6 +148,29 @@
 					$intelHeader.addClass('scrolling');
 				}
 			});
+		},
+
+		scrollToTop: function() {
+			$toTop.hide();
+			$window.on('scroll', function() {
+				if ($window.scrollTop() > 200) {
+					$toTop.fadeIn();
+				} else {
+					$toTop.fadeOut();
+				}
+			});
+
+			$toTop.on('click', function() {
+				$('html,body').animate(
+					{
+						scrollTop: 0
+					},
+					{
+						duration: 700,
+						easing: 'swing'
+					}
+				);
+			});
 		}
 	};
 
@@ -152,7 +192,7 @@
 	};
 
 	/**
-	 * Scripts to run on window load & resize event.
+	 * Scripts to run on window resize event.
 	 */
 	INNOVA.onResize = {
 		init: function() {
@@ -176,12 +216,7 @@
 	/**
 	 * App Init.
 	 */
-	INNOVA.init = function() {
+	INNOVA.init = (function() {
 		INNOVA.onReady.init(), INNOVA.onLoad.init(), INNOVA.onResize.init();
-	};
-
-	/**
-	 * Run app.
-	 */
-	INNOVA.init();
+	})();
 })(jQuery);

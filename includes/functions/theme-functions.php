@@ -417,7 +417,7 @@ if ( ! function_exists( 'innova_comment_callback' ) ) {
 					<?php
 					if ( ! empty( get_avatar( $comment ) ) ) {
 						?>
-						<div class="comment-author vcard">
+						<div class="comment-author vcard d-none d-sm-block">
 							<?php
 							echo get_avatar(
 								$comment,
@@ -453,7 +453,7 @@ if ( ! function_exists( 'innova_comment_callback' ) ) {
 						}
 						?>
 
-						<div class="comment-meta commentmetadata">
+						<div class="comment-meta commentmetadata flex-wrap">
 							<a href="<?php echo esc_url( htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ); ?>">
 								<time datetime="<?php echo esc_attr( get_the_time( 'c' ) ); ?>" itemprop="datePublished">
 									<?php

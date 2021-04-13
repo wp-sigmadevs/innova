@@ -188,7 +188,7 @@ class Innova_Customizer_Controls {
 			'section'     => 'innova_footer_styles',
 			'type'        => 'color',
 			'priority'    => 10,
-			'default'     => '#fff',
+			'default'     => '#738ff4',
 			'output'      => array(
 				array(
 					'element'  => '#colophon',
@@ -218,7 +218,7 @@ class Innova_Customizer_Controls {
 			'transport'   => 'auto',
 			'output'      => array(
 				array(
-					'element' => '#colophon',
+					'element' => '#colophon .footer-widget-area',
 				),
 			),
 		);

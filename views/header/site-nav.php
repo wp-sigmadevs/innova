@@ -27,10 +27,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</nav><!-- #main-nav -->
 </div><!-- .navigation-wrapper -->
 
-<div id="innova-menu-trigger" class="mobile-nav innova-menu-trigger d-block d-sm-block d-md-block d-lg-none">
+<div id="innova-menu-trigger" class="mobile-nav innova-menu-trigger d-block d-sm-block d-md-block d-lg-none text-right">
 	<div class="primary-nav">
 		<button id="innova-trigger-button" class="primary-nav-details">
-			<?php echo esc_html__( 'Menu', 'innova' ); ?>
+			<span><?php echo esc_html__( 'Menu', 'innova' ); ?></span>
 			<i class="fa fa-bars"></i>
 		</button>
 	</div><!-- #primary-nav -->

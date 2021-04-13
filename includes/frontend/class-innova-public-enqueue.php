@@ -152,7 +152,7 @@ class Innova_Public_Enqueue extends Innova_Enqueue {
 		$styles[] = array(
 			'handle'    => 'innova-stylesheet',
 			'asset_uri' => get_stylesheet_uri(),
-			'version' => $this->base->get_theme_version(),
+			'version'   => $this->base->get_theme_version(),
 		);
 
 		$this->enqueues['style'] = apply_filters( 'innova_frontend_styles', $styles, 10, 1 );
@@ -174,20 +174,22 @@ class Innova_Public_Enqueue extends Innova_Enqueue {
 
 		// Modernizr JS.
 		$scripts[] = array(
-			'handle'     => 'modernizr',
-			'asset_uri'  => $this->base->get_js_uri() . 'modernizr.min.js',
-			'dependency' => array( 'jquery' ),
-			'version'    => '1.7.10',
+			'handle'         => 'modernizr',
+			'asset_uri'      => $this->base->get_js_uri() . 'modernizr.min.js',
+			'dependency'     => array( 'jquery' ),
+			'version'        => '1.7.10',
+			'load_in_footer' => false,
 		);
 
 		// IE Polyfill.
 		global $is_IE;
 		if ( $is_IE ) {
 			$scripts[] = array(
-				'handle'     => 'ie11-polyfill-css-variables',
-				'asset_uri'  => $this->base->get_js_uri() . 'ie11-polyfill.min.js',
-				'dependency' => array(),
-				'version'    => '3.14.1',
+				'handle'         => 'ie11-polyfill-css-variables',
+				'asset_uri'      => $this->base->get_js_uri() . 'ie11-polyfill.min.js',
+				'dependency'     => array(),
+				'version'        => '3.14.1',
+				'load_in_footer' => false,
 			);
 		}
 
@@ -235,7 +237,7 @@ class Innova_Public_Enqueue extends Innova_Enqueue {
 			'handle'     => 'innova-frontend-script',
 			'asset_uri'  => $this->base->get_js_uri() . 'frontend.js',
 			'dependency' => array( 'jquery' ),
-			'version' => $this->base->get_theme_version(),
+			'version'    => $this->base->get_theme_version(),
 		);
 
 		$this->enqueues['script'] = apply_filters( 'innova_frontend_scripts', $scripts, 10, 1 );

@@ -29,7 +29,7 @@ get_header(); ?>
 							echo '</div>';
 
 							if ( true === get_theme_mod( 'innova_single_pagination', false ) ) {
-								echo '<div class="row pagination-container">';
+								echo '<div class="row pagination-container d-none d-md-flex">';
 									echo '<div class="col-12">';
 										// Post Pagination.
 										innova_post_pagination();

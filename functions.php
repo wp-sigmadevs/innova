@@ -15,10 +15,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * This Theme only works in WordPress 4.7 or later.
+ * This Theme only works in WordPress 5.0 or later.
  */
-if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
-	require get_template_directory() . '/includes/utils/back-compat.php';
+if ( version_compare( $GLOBALS['wp_version'], '5.0', '<' ) ) {
+	require get_template_directory() . '/includes/compats/class-innova-back-compats.php';
+
+	$messages = Innova_Back_Compats::get_instance();
+	$messages->register();
+
 	return;
 }
 

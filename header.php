@@ -45,7 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="header-area<?php echo true === get_theme_mod( 'innova_enable_sticky_header', true ) ? esc_attr( ' intelligent-header' ) : ''; ?>">
 				<div class="<?php innova_header_container(); ?>">
 					<div class="row align-items-center">
-						<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+						<div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-3">
 							<?php
 							/**
 							 * Site Branding.
@@ -54,7 +54,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							?>
 						</div>
 
-						<div class="col-12 col-sm-12 col-md-6 col-lg-8 col-xl-9">
+						<div class="col-6 col-sm-6 col-md-6 col-lg-8 col-xl-9">
 							<?php
 							/**
 							 * Site Nav.

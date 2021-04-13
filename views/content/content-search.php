@@ -12,45 +12,32 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		// The Post Thumbnail.
-		innova_the_post_thumbnail( 'full' );
-
-		the_title(
-			sprintf(
-				'<h2 class="entry-title"><a href="%s" rel="bookmark">',
-				esc_url( get_permalink() )
-			),
-			'</a></h2>'
-		);
-
-		if ( 'post' === get_post_type() ) {
+<div class="col-12 col-lg-12">
+	<article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-half pb-half post-item' ); ?>>
+		<header class="entry-header">
+			<?php
+			the_title(
+				sprintf(
+					'<h2 class="entry-title"><a href="%s" rel="bookmark">',
+					esc_url( get_permalink() )
+				),
+				'</a></h2>'
+			);
 			?>
-			<div class="entry-meta">
-				<div class="meta-container">
-					<?php innova_posted_on(); ?>
-					<?php innova_posted_by(); ?>
-					<?php innova_comments_meta(); ?>
-				</div>
+		</header><!-- .entry-header -->
+
+		<div class="entry-content">
+			<div class="post-content">
+				<?php
+				the_excerpt();
+				?>
+			</div><!-- .post-content -->
+		</div><!-- .entry-content -->
+
+		<footer class="entry-footer">
+			<div class="more-link">
+				<a href="<?php the_permalink(); ?>" class="inv-btn primary"><?php echo esc_html__( 'Continue Reading', 'innova' ); ?></a>
 			</div>
-			<?php
-		}
-		?>
-	</header><!-- .entry-header -->
-
-	<div class="entry-content">
-		<div class="post-content">
-			<?php
-			the_excerpt();
-			?>
-		</div><!-- .post-content -->
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<div class="more-link">
-			<a href="<?php the_permalink(); ?>"><?php echo esc_html__( 'Continue Reading', 'innova' ); ?></a>
-		</div>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+		</footer><!-- .entry-footer -->
+	</article><!-- #post-## -->
+</div>
