@@ -23,7 +23,7 @@
             "label": "Disable Page Title Banner",
             "name": "innova_meta_disable_page_title",
             "type": "true_false",
-            "instructions": "Switch on to disable page title banner.",
+            "instructions": "Switch on to disable the page title banner.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -58,7 +58,7 @@
         },
         {
             "key": "field_60408999b1cc8",
-            "label": "Showcase",
+            "label": "Footer",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -74,10 +74,10 @@
         },
         {
             "key": "field_604089a2b1cc9",
-            "label": "Showcase Image",
-            "name": "innova_meta_showcase_image",
-            "type": "image",
-            "instructions": "Please upload the showcase image.",
+            "label": "Disable Footer Widgets",
+            "name": "innova_meta_disable_footer_widgets",
+            "type": "true_false",
+            "instructions": "Switch on to disable the footer widgets.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -85,16 +85,11 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "id",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "On",
+            "ui_off_text": "Off"
         }
     ],
     "location": [
@@ -114,5 +109,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1614847215
+    "modified": 1618310319
 }

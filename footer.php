@@ -19,10 +19,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<?php
-			/**
-			 * Footer Widgets.
-			 */
-			get_template_part( 'views/footer/footer', 'widgets' );
+			if ( ! get_field( 'innova_meta_disable_footer_widgets' ) ) {
+				/**
+				 * Footer Widgets.
+				 */
+				get_template_part( 'views/footer/footer', 'widgets' );
+			}
 			?>
 
 			<div class="footer-copyright">

@@ -79,10 +79,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php
 		if ( ! is_front_page() ) {
-			/**
-			 * Page Title.
-			 */
-			get_template_part( 'views/header/page', 'title' );
+			if ( ! get_field( 'innova_meta_disable_page_title' ) ) {
+				/**
+				 * Page Title.
+				 */
+				get_template_part( 'views/header/page', 'title' );
+			}
 		}
 		?>
 		<div id="wrapper" class="site-content<?php echo is_front_page() ? esc_attr( ' front-page-content' ) : esc_attr( ' inner-page-content' ); ?>" tabindex="-1">
