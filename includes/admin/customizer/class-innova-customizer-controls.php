@@ -641,8 +641,8 @@ class Innova_Customizer_Controls {
 			'label'       => esc_html__( 'Pagination Type', 'innova' ),
 			'description' => esc_html__( 'Please select the pagination type for archive pages', 'innova' ),
 			'choices'     => array(
-				'classic'  => esc_html__( 'Classic Pagination' ),
-				'numbered' => esc_html__( 'Numbered Pagination' ),
+				'classic'  => esc_html__( 'Classic Pagination', 'innova' ),
+				'numbered' => esc_html__( 'Numbered Pagination', 'innova' ),
 			),
 			'type'        => 'select',
 			'section'     => 'innova_archive_settings',

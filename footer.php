@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								<?php
 								$footer_copyright = get_theme_mod( 'innova_footer_copyright_text', '' );
 
-								echo htmlspecialchars_decode( wpautop( wp_kses_post( $footer_copyright ) ) );
+								echo wp_kses_post( wpautop( wp_specialchars_decode( $footer_copyright ) ) );
 								?>
 							</div><!-- .site-info -->
 						</div>

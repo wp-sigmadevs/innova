@@ -440,14 +440,14 @@ if ( ! function_exists( 'innova_comment_callback' ) ) {
 						);
 						?>
 
-						<div class="comment-text" itemprop="text">
+						<div class="comment-text">
 							<?php comment_text(); ?>
 						</div>
 
 						<?php
 						if ( '0' === $comment->comment_approved ) {
 							?>
-							<em class="comment-awaiting-moderation"><?php esc_attr_e( 'Your comment is awaiting moderation.', 'innova' ); ?></em>
+							<em class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'innova' ); ?></em>
 							<br />
 							<?php
 						}
@@ -455,7 +455,7 @@ if ( ! function_exists( 'innova_comment_callback' ) ) {
 
 						<div class="comment-meta commentmetadata flex-wrap">
 							<a href="<?php echo esc_url( htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ); ?>">
-								<time datetime="<?php echo esc_attr( get_the_time( 'c' ) ); ?>" itemprop="datePublished">
+								<time datetime="<?php echo esc_attr( get_the_time( 'c' ) ); ?>">
 									<?php
 									/* translators: 1: comment date, 2: comment time */
 									printf( esc_html__( '%1$s at %2$s', 'innova' ), get_comment_date(), get_comment_time() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
