@@ -511,3 +511,23 @@ if ( ! function_exists( 'innova_sanitize_hex' ) ) {
 		return null;
 	}
 }
+
+if ( ! class_exists( 'ACF' ) ) {
+	/**
+	 * ACF fallback.
+	 *
+	 * @param string $key Meta key.
+	 * @param int    $post_id Post ID.
+	 * @param int    $format_value Formatted value.
+	 * @return mixed
+	 * @since v1.0.0
+	 */
+	function get_field( $key, $post_id = false, $format_value = true ) {
+		if ( false === $post_id ) {
+			global $post;
+			$post_id = $post->ID;
+		}
+
+		return get_post_meta( $post_id, $key, true );
+	}
+}
