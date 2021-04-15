@@ -889,7 +889,7 @@ input[type="submit"],
 	min-width: 200px;
 	color: #fff;
 	text-transform: uppercase;
-	font-family: 'Source Sans Pro';
+	font-family: var(--inv-heading-font);
 	text-align: center;
 	height: auto;
 }
