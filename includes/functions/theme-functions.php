@@ -512,7 +512,7 @@ if ( ! function_exists( 'innova_sanitize_hex' ) ) {
 	}
 }
 
-if ( ! class_exists( 'ACF' ) ) {
+if ( ! is_admin() && ! function_exists( 'get_field' ) ) {
 	/**
 	 * ACF fallback.
 	 *
