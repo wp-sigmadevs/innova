@@ -427,63 +427,63 @@ class Innova_Customizer_Controls {
 	 */
 	private function colors() {
 		$this->controls[] = array(
-			'settings' => 'innova_text_color',
-			'label'    => esc_html__( 'Text Color', 'innova' ),
-			'section'  => 'innova_color_settings',
-			'type'     => 'color',
-			'priority' => 10,
-			'default'  => '#242545',
-			// 'transport' => 'postMessage',
+			'settings'  => 'innova_text_color',
+			'label'     => esc_html__( 'Text Color', 'innova' ),
+			'section'   => 'innova_color_settings',
+			'type'      => 'color',
+			'priority'  => 10,
+			'default'   => '#242545',
+			'transport' => 'postMessage',
 		);
 
 		$this->controls[] = array(
-			'settings' => 'innova_primary_color',
-			'label'    => esc_html__( 'Primary Color', 'innova' ),
-			'section'  => 'innova_color_settings',
-			'type'     => 'color',
-			'priority' => 15,
-			'default'  => '#738ff4',
-			// 'transport' => 'postMessage',
+			'settings'  => 'innova_primary_color',
+			'label'     => esc_html__( 'Primary Color', 'innova' ),
+			'section'   => 'innova_color_settings',
+			'type'      => 'color',
+			'priority'  => 15,
+			'default'   => '#738ff4',
+			'transport' => 'postMessage',
 		);
 
 		$this->controls[] = array(
-			'settings' => 'innova_secondary_color',
-			'label'    => esc_html__( 'Secondary Color', 'innova' ),
-			'section'  => 'innova_color_settings',
-			'type'     => 'color',
-			'priority' => 20,
-			'default'  => '#fc346c',
-			// 'transport' => 'postMessage',
+			'settings'  => 'innova_secondary_color',
+			'label'     => esc_html__( 'Secondary Color', 'innova' ),
+			'section'   => 'innova_color_settings',
+			'type'      => 'color',
+			'priority'  => 20,
+			'default'   => '#fc346c',
+			'transport' => 'postMessage',
 		);
 
 		$this->controls[] = array(
-			'settings' => 'innova_tertiary_color',
-			'label'    => esc_html__( 'Tertiary Color', 'innova' ),
-			'section'  => 'innova_color_settings',
-			'type'     => 'color',
-			'priority' => 25,
-			'default'  => '#fccc6c',
-			// 'transport' => 'postMessage',
+			'settings'  => 'innova_tertiary_color',
+			'label'     => esc_html__( 'Tertiary Color', 'innova' ),
+			'section'   => 'innova_color_settings',
+			'type'      => 'color',
+			'priority'  => 25,
+			'default'   => '#fccc6c',
+			'transport' => 'postMessage',
 		);
 
 		$this->controls[] = array(
-			'settings' => 'innova_offset_color',
-			'label'    => esc_html__( 'Offset Color', 'innova' ),
-			'section'  => 'innova_color_settings',
-			'type'     => 'color',
-			'priority' => 30,
-			'default'  => '#EFF5FC',
-			// 'transport' => 'postMessage',
+			'settings'  => 'innova_offset_color',
+			'label'     => esc_html__( 'Offset Color', 'innova' ),
+			'section'   => 'innova_color_settings',
+			'type'      => 'color',
+			'priority'  => 30,
+			'default'   => '#EFF5FC',
+			'transport' => 'postMessage',
 		);
 
 		$this->controls[] = array(
-			'settings' => 'innova_border_color',
-			'label'    => esc_html__( 'Border Color', 'innova' ),
-			'section'  => 'innova_color_settings',
-			'type'     => 'color',
-			'priority' => 35,
-			'default'  => '#DDDDDD',
-			// 'transport' => 'postMessage',
+			'settings'  => 'innova_border_color',
+			'label'     => esc_html__( 'Border Color', 'innova' ),
+			'section'   => 'innova_color_settings',
+			'type'      => 'color',
+			'priority'  => 35,
+			'default'   => '#DDDDDD',
+			'transport' => 'postMessage',
 		);
 
 		return $this;

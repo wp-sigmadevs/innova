@@ -53,6 +53,10 @@
 		},
 
 		preLoaderInit: function() {
+			if (!$preLoader.elExists()) {
+				return false;
+			}
+
 			$preLoader.delay(300).fadeOut('fast');
 		},
 
