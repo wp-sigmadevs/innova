@@ -37,6 +37,6 @@ if ( file_exists( get_parent_theme_file_path( 'includes/class-innova-autoloader.
 if ( class_exists( 'Innova_Theme' ) ) {
 
 	// Starting the app.
-	$innova_run = new Innova_Theme();
-	$innova_run->register_services();
+	$innova_theme = Innova_Theme::get_instance();
+	$innova_theme->register_services();
 }
