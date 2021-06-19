@@ -63,7 +63,7 @@ class Innova_CSS_Variables {
 	 * @since 1.0.0
 	 */
 	public function register() {
-		$this->colors()->fonts()->gutter();
+		$this->colors()->fonts()->gutter()->transition();
 
 		if ( empty( $this->variables ) ) {
 			return;
@@ -96,6 +96,10 @@ class Innova_CSS_Variables {
 				--inv-gutter-full: ' . $this->variables['gutter']['full'] . ';
 				--inv-gutter-half: ' . $this->variables['gutter']['half'] . ';
 				--inv-gutter-expand-factor: ' . $this->variables['gutter']['expand-factor'] . ';
+				--inv-transition-all: ' . $this->variables['transition']['all'] . ';
+				--inv-transition-property: ' . $this->variables['transition']['property'] . ';
+				--inv-transition-duration: ' . $this->variables['transition']['duration'] . ';
+				--inv-transition-timing-function: ' . $this->variables['transition']['timing-function'] . ';
 		}';
 
 		wp_add_inline_style( 'innova-stylesheet', $theme_vars );
@@ -149,6 +153,23 @@ class Innova_CSS_Variables {
 		$this->variables['gutter']['full']          = 'var(--inv-gutter)';
 		$this->variables['gutter']['half']          = 'calc(var(--inv-gutter-full) / 2)';
 		$this->variables['gutter']['expand-factor'] = 1.6;
+
+		return $this;
+	}
+
+	/**
+	 * Transition.
+	 *
+	 * @access private
+	 * @return object
+	 *
+	 * @since 1.0.0
+	 */
+	private function transition() {
+		$this->variables['transition']['all']             = 'all 0.7s cubic-bezier(0.2, 1, 0.22, 1)';
+		$this->variables['transition']['property']        = 'all';
+		$this->variables['transition']['duration']        = '0.7s';
+		$this->variables['transition']['timing-function'] = 'cubic-bezier(0.2, 1, 0.22, 1)';
 
 		return $this;
 	}

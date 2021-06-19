@@ -91,6 +91,12 @@ i00 Global - Variables
 	--inv-gutter-full: var(--inv-gutter);
 	--inv-gutter-half: calc(var(--inv-gutter-full) / 2);
 	--inv-gutter-expand-factor: 1.6;
+
+	/* Default Transition */
+	--inv-transition-all: all 0.7s cubic-bezier(0.2, 1, 0.22, 1);
+	--inv-transition-property: all;
+	--inv-transition-duration: 0.7s;
+	--inv-transition-timing-function: cubic-bezier(0.2, 1, 0.22, 1);
 }
 
 /**************************************
@@ -141,7 +147,7 @@ body {
 }
 
 .pt-full {
-	padding-top: var(--inv-gutter-half) !important;
+	padding-top: var(--inv-gutter-full) !important;
 }
 
 .pb-half {
@@ -643,8 +649,6 @@ section ul:last-child {
 	right: auto;
 	bottom: auto;
 	left: 0;
-	-webkit-transition: all 0.3s cubic-bezier(.55, 0, .1, 1);
-	transition: all 0.3s cubic-bezier(.55, 0, .1, 1);
 }
 
 .innova-scroll-to-top::before {
@@ -921,18 +925,59 @@ input[type="reset"],
 input[type="password"],
 input[type="search"],
 input[type="tel"] {
-	-webkit-transition: all 0.7s cubic-bezier(0.2, 1, 0.22, 1);
-	-o-transition: all 0.7s cubic-bezier(0.2, 1, 0.22, 1);
-	transition: all 0.7s cubic-bezier(0.2, 1, 0.22, 1);
+	-webkit-transition: var(--inv-transition-all);
+	transition: var(--inv-transition-all);
 }
 
 .sf-menu a {
-	-webkit-transition: color 0.7s cubic-bezier(0.2, 1, 0.22, 1), padding-top 0.7s cubic-bezier(0.2, 1, 0.22, 1),
-		padding-bottom 0.7s cubic-bezier(0.2, 1, 0.22, 1);
-	-o-transition: color 0.7s cubic-bezier(0.2, 1, 0.22, 1), padding-top 0.7s cubic-bezier(0.2, 1, 0.22, 1),
-		padding-bottom 0.7s cubic-bezier(0.2, 1, 0.22, 1);
-	transition: color 0.7s cubic-bezier(0.2, 1, 0.22, 1), padding-top 0.7s cubic-bezier(0.2, 1, 0.22, 1),
-		padding-bottom 0.7s cubic-bezier(0.2, 1, 0.22, 1);
+	-webkit-transition: color var(--inv-transition-duration) var(--inv-transition-timing-function),
+		padding-top var(--inv-transition-duration) var(--inv-transition-timing-function),
+		padding-bottom var(--inv-transition-duration) var(--inv-transition-timing-function),
+		opacity var(--inv-transition-duration) var(--inv-transition-timing-function);
+	transition: color var(--inv-transition-duration) var(--inv-transition-timing-function),
+		padding-top var(--inv-transition-duration) var(--inv-transition-timing-function),
+		padding-bottom var(--inv-transition-duration) var(--inv-transition-timing-function),
+		opacity var(--inv-transition-duration) var(--inv-transition-timing-function);
+}
+
+.gallery-item a img {
+	-webkit-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+
+.innova-scroll-to-top::before,
+.innova-scroll-to-top::after {
+	-webkit-transition: all 0.3s var(--inv-transition-timing-function);
+	transition: all 0.3s var(--inv-transition-timing-function);
+}
+
+.iheader {
+	-webkit-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+.innova-menu {
+	-webkit-transition: -webkit-transform var(--inv-transition-duration) var(--inv-transition-timing-function);
+	transition: -webkit-transform var(--inv-transition-duration) var(--inv-transition-timing-function);
+	transition: transform var(--inv-transition-duration) var(--inv-transition-timing-function);
+	transition: transform var(--inv-transition-duration) var(--inv-transition-timing-function), -webkit-transform var(--inv-transition-duration) var(--inv-transition-timing-function);
+}
+
+.innova-menu-mask {
+	-webkit-transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s;
+	transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s;
+}
+
+.innova-menu-mask.is-active {
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.innova-menu .has-child .drawer-toggle i::before {
+	-webkit-transition: -webkit-transform .3s ease-out;
+	transition: -webkit-transform .3s ease-out;
+	transition: transform .3s ease-out;
+	transition: transform .3s ease-out, -webkit-transform .3s ease-out;
 }
 
 /**************************************
@@ -1117,11 +1162,6 @@ blockquote cite {
 .gallery-item a img {
 	display: block;
 	width: 100%;
-	-webkit-transition: all 0.2s ease-in;
-	-moz-transition: all 0.2s ease-in;
-	-ms-transition: all 0.2s ease-in;
-	-o-transition: all 0.2s ease-in;
-	transition: all 0.2s ease-in;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
@@ -1330,8 +1370,6 @@ i20 Header
 }
 
 .iheader {
-	-webkit-transition: all .3s ease-in-out;
-	transition: all .3s ease-in-out;
 	will-change: transform;
 }
 
@@ -1463,10 +1501,6 @@ body.has-active-menu {
 	position: fixed;
 	z-index: 1000;
 	background-color: var(--inv-text-color);
-	-webkit-transition: -webkit-transform 0.3s;
-	transition: -webkit-transform 0.3s;
-	transition: transform 0.3s;
-	transition: transform 0.3s, -webkit-transform 0.3s;
 	width: 70%;
 	height: 100%;
 	overflow-y: auto;
@@ -1544,16 +1578,12 @@ body.has-active-menu {
 	height: 0;
 	background-color: #000;
 	opacity: 0;
-	-webkit-transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s;
-	transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s;
 }
 
 .innova-menu-mask.is-active {
 	width: 100%;
 	height: 100%;
 	opacity: 0.7;
-	-webkit-transition: opacity 0.3s;
-	transition: opacity 0.3s;
 }
 
 .innova-menu .current-menu-parent > a:not(.drawer-toggle),
@@ -1593,10 +1623,6 @@ body.has-active-menu {
 }
 
 .innova-menu .has-child .drawer-toggle i::before {
-	-webkit-transition: -webkit-transform .3s ease-out;
-	transition: -webkit-transform .3s ease-out;
-	transition: transform .3s ease-out;
-	transition: transform .3s ease-out, -webkit-transform .3s ease-out;
 	display: block;
 }
 
